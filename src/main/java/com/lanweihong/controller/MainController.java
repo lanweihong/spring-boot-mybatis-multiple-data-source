@@ -20,7 +20,7 @@ import java.util.Map;
  * @author lanweihong 986310747@qq.com
  */
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1")
 public class MainController {
 
     private final IUserService userService;
