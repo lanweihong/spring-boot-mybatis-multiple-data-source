@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 1
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 5
+      max-active: 50
+      max-wait: 60000
+      min-idle: 5
+      # 配置 book 数据源，可自定义
+      book:
+        url: jdbc:mysql://localhost:3306/db01?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
+      # 配置 user 数据源
+      user:
+        url: jdbc:mysql://localhost:3306/db02?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
+        # 重新配置密码，未配置则默认使用以上配置的
+        username: root
+        password: 1
+server:
+  port: 8015

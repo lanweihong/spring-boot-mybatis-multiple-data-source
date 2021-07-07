@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanweihong.dao.book.IBookDao">
+
+    <resultMap id="BaseResultMap" type="com.lanweihong.entity.BookDO">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="version" jdbcType="INTEGER" property="version" />
+        <result column="book_name" jdbcType="VARCHAR" property="bookName" />
+        <result column="status" jdbcType="TINYINT" property="status" />
+        <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    </resultMap>
+
+    <sql id="BaseColumnList">
+        id, version, book_name, status, add_time
+    </sql>
+
+    <select id="getByBookName" resultMap="BaseResultMap">
+        SELECT <include refid="BaseColumnList" /> FROM book WHERE book_name = #{bookName}
+    </select>
+
+</mapper>
